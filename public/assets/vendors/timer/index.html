@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down Timer</title>
+</head>
+<style>
+    .content{
+        display:inline;
+        text-align:center;
+    }
+
+    .box-content{
+        color: white;
+        width: 50px;
+        height: 50px;
+        border: 1px;
+        background: black;
+        display: flex;
+        font-size:24px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+    }
+    .content-label{
+        color:black
+        ;text-shadow:1px 1px 1px rgba(0,0,0,0.7);
+    }
+
+</style>
+<body>
+    <div id="clock" style="justify-content: center;">
+</div>
+
+    <script src="dist/jquery-3.4.1.min.js"></script>
+<script src="dist/jquery.countdown.min.js"></script>
+<script>
+    /* Event Object: 
+{
+  type:           '{String} The namespaced event type {update,finish,stop}.countdown',
+  strftime:       '{Function} The formatter function',
+  finalDate:      '{Date} The parsed final date native object',
+  elapsed:        '{bool} Passed away the final date?',
+  offset: {
+    seconds     : '{int} Seconds left for the next minute',
+    minutes     : '{int} Minutes left for the next hour',
+    hours       : '{int} Hours left until next day',
+    days        : '{int} Days left until next week',
+    daysToWeek  : '{int} Days left until next week',
+    daysToMonth : '{int} Days left until next month',
+    weeks       : '{int} Weeks left until the final date',
+    weeksToMonth: '{int} Weeks left until the next month',
+    months      : '{int} Months left until final date',
+    years       : '{int} Years left until final date',
+    totalDays   : '{int} Total amount of days left until final date',
+    totalHours  : '{int} Total amount of hours left until final date',
+    totalMinutes: '{int} Total amount of minutes left until final date',
+    totalSeconds: '{int} Total amount of seconds left until final date'
+  }
+}
+*/
+$('#clock').countdown('2021/07/03 12:10:00',function(event) {
+  $(this).html(event.strftime(`
+  <div style="display:flex;">
+        <div class="content">
+            <div class="box-content">%H</div>
+                <span class="content-label">Jam</span>
+        </div>&nbsp;
+        <div class="content">
+            <div class="box-content">%M</div>
+                <span class="content-label">Menit</span>
+        </div>&nbsp;
+        <div class="content">
+            <div class="box-content">%S</div>
+                <span class="content-label">Detik</span>
+        </div>
+
+    </div>
+  `));
+})
+.on('update.countdown', function(event) {
+  if (event.elapsed) {
+    // Counting up...
+  } else {
+    // Countdown...
+  }
+})
+.on('finish.countdown', function(event) {
+//   return document.location.replace('https://google.com');
+})
+.on('stop.countdown', function(event) {
+})
+</script>
+</body>
+</html>
