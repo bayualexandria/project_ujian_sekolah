@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\{ActivityModel, JawabanModel, SiswaModel, UjianModel, SoalModel};
 use Config\Database;
 use Dompdf\Dompdf;
+use TCPDF;
 
 class JadwalUjianController extends BaseController
 {
@@ -104,11 +105,19 @@ class JadwalUjianController extends BaseController
 	{
 		$dompdf = new Dompdf();
 
-		$dompdf->loadHtml(view('app/pdf/index'));
-		$dompdf->setPaper('A4', 'portrait'); //ukuran kertas dan orientasi
+
+		$dompdf->loadHtml(view('app/pdf/footer', ['title' => 'Halaman Nilai Siswa']));
+		$dompdf->setPaper(array(0, 0, 566.9362763625, 188.9787587875), 'portrait'); //ukuran kertas dan orientasi
 		$dompdf->render();
 
 		// Output the generated PDF to Browser
-		$dompdf->stream();
+		$dompdf->stream(''.auth()->name.' UTS Sistem Operasi', array("Attachment" => false));
+		// $tcpdf = new TCPDF();
+		// $tcpdf->setPrintHeader(false);
+		// $tcpdf->setPrintFooter(view('app/pdf/footer'));
+		// $tcpdf->AddPage();
+		// $tcpdf->writeHTML(view('app/pdf/index', ['title' => 'Halaman Nilai Siswa']));
+		// $this->response->setContentType('application/pdf');
+		// $tcpdf->Output('' . auth()->name . ' UTS Sistem Operasi', 'I');
 	}
 }

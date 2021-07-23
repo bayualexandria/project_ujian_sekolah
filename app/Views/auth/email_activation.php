@@ -29,16 +29,14 @@
                 </div>
             </div>
             <div style="background-color:white;padding: 5px;">
-                <p style="font-size: 24px;"><?= $title; ?></p>
+                <p style="font-size: 24px;"></p>
                 <p style="text-align: justify; padding:0 25px;">
-                    <?php if ($title == 'Aktifasi Akun !') : ?>
-                        Hai, <?= $name; ?>. Selamat kamu telah terdaftar pada akun kami, selamat bergabung di situs kami. Untuk mengaktifkan akun ini perlu verifikasi akun anda untuk keamanan data pribadi kamu. Klik tombol aktivasi dibawah ini.
-                    <?php else : ?>
-                        Hai, <?= $name; ?>. Jika kamu butuh bantuan untuk mengganti atau mengubah password yang terlupa. Kami akan membantu kamu untuk mengatasinya yaitu dengan menekan tombol dibawah ini untuk melanjutkan.
-                    <?php endif; ?>
+                   
+                        Hai, . Selamat kamu telah terdaftar pada akun kami, selamat bergabung di situs kami. Untuk mengaktifkan akun ini perlu verifikasi akun anda untuk keamanan data pribadi kamu. Klik tombol aktivasi dibawah ini.
+                    
                 </p>
                 <p style="margin-top: 50px;margin-bottom:50px;">
-                    <a href="<?= base_url($url); ?>" style="width: auto;
+                    <a href="" style="width: auto;
         height: auto;
         padding: 5px 20px;
         border: 1.5px solid rgba(0, 0, 0, 0.2);
@@ -49,11 +47,7 @@
         background-color: #2E65EF;
         border-radius: 4px;
         font-size: 24px;">
-                        <?php if ($title == 'Aktifasi Akun !') : ?>
-                            Activation
-                        <?php else : ?>
-                            Reset password
-                        <?php endif; ?>
+                       jk
                     </a>
                 </p>
             </div>

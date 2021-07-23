@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <link rel="stylesheet" href="<?= base_url('assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/vendors/iconfonts/ionicons/dist/css/ionicons.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/vendors/css/vendor.bundle.base.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/vendors/css/vendor.bundle.addons.css'); ?>">
@@ -27,9 +26,6 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/demo_1/style.css'); ?>">
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.ico'); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/vendors/flipdown/css/flipdown/flipdown.css'); ?>">
-    <script type="text/javascript" src="<?= base_url('assets/vendors/flipdown/js/flipdown/flipdown.js'); ?>"></script>
-    <script type="text/javascript" src="<?= base_url('assets/vendors/flipdown/js/main.js'); ?>"></script>
     <style>
         .content {
             display: inline;
@@ -87,7 +83,7 @@
                                             echo $time;  ?>
                     </li>
                     <li class="nav-item dropdown ">
-                        <div id="clock" class="align-content-center" data="<?= $ujian->time; ?>">
+                        <div class="align-content-center clock" data="<?= $ujian->time; ?>">
                         </div>
                     </li>
 
@@ -243,7 +239,7 @@
     <!-- Custom js for this page-->
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="<?= base_url('assets/vendors/timer/dist/jquery.countdown.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/vendors/timer/src/countdown.js'); ?>"></script>
 
     <script>
         // const soal = document.getElementById('soal');
@@ -303,8 +299,8 @@
   }
 }
 */
-        const time = $('#clock').attr('data');
-        $('#clock').countdown(time, function(event) {
+        const time = $('.clock').attr('data');
+        $('.clock').countdown(time, function(event) {
                 $(this).html(event.strftime(`
                     <div style="display:flex;">
                             <div class="content">

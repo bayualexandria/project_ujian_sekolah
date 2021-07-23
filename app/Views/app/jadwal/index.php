@@ -113,7 +113,7 @@
                                                     if (time() + 60 * 60 * 14 > strtotime($u->time)) : ?>
                                                         <span class="badge badge-success">selesai</span>
                                                     <?php else : ?>
-                                                        <div id="time" class="align-content-center" data="<?= $u->date; ?>" data-waktu="<?= $u->id; ?>">
+                                                        <div class="align-content-center time" data="<?= $u->date; ?>" data-waktu="<?= $u->id; ?>">
                                                         <?php endif; ?>
                                                 </td>
                                             </tr>
@@ -141,7 +141,7 @@
 
 <?= $this->section('scripts'); ?>
 <?= $this->include('app/layout/script'); ?>
-<script src="<?= base_url('assets/vendors/timer/dist/jquery.countdown.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendors/timer/src/countdown.js'); ?>"></script>
 <script>
     /* Event Object: 
 {
@@ -167,8 +167,8 @@
   }
 }
 */
-    const time = $('#time').attr('data');
-    $('#time').countdown(time, function(event) {
+    const time = $('.time').attr('data');
+    $('.time').countdown(time, function(event) {
             $(this).html(event.strftime(`
                     <div style="display:flex;" id="waktu">
                             <div class="content">
@@ -199,7 +199,7 @@
             }
         })
         .on('finish.countdown', function(event) {
-            const id = $('#time').attr('data-waktu');
+            const id = $('.time').attr('data-waktu');
             const button = ` <a href="http://localhost:8080/jadwal/start/${id}" class="start btn btn-outline-danger btn-icons btn-rounded"><i class="mdi mdi-play"></i></a>`;
             $('#waktu').remove();
             $('#button').append(button);

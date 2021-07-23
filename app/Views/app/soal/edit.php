@@ -59,16 +59,6 @@
 <script src="<?= base_url('assets/vendors/ckeditor/ckeditor.js') ?>"></script>
 <script src="<?= base_url('assets/vendors/ckfinder/ckfinder.js') ?>"></script>
 <script>
-    // ClassicEditor
-    //     .create(document.querySelector('#soal'), 'ckfinder')
-    //     .catch(error => {
-    //         console.log(error);
-    //     });
-
-    // CKEDITOR.replace('soal', {
-    //     filebrowserBrowseUrl: 'assets/vendors/ckfinder/ckfinder.html',
-    //     filebrowserUploadUrl: 'assets/vendors/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
-    // });
 
     $(document).ready(function() {
 

@@ -5,123 +5,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Pemesanan</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <style>
-        .img {
-            width: 150px;
-            margin-top: 1rem;
-        }
-
-        .text {
-            font-size: 25px;
-        }
-
-        .text small {
-            font-size: 15px;
-        }
-
-        .invoice-info {
-            margin-left: 1rem;
-            margin-top: 50px;
-        }
-
-        .invoice-info .invoice-col {
-            margin-top: 50px;
-        }
-
-        .kol1 {
-            float: right;
-        }
-
-        .table {
+        body {
+            padding: 0;
+            margin: 0;
             font-size: 12px;
-        }
-
-        .lead {
-            font-size: 18px;
         }
     </style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- Main content -->
-        <section class="invoice">
-            <!-- title row -->
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="page-header text">
-                        <img class="img" src="assets/images/profile/azhar.png" /> CV. Azharku Media
-                        <small class="float-right">Date: <?= date('d F Y'); ?></small>
-                    </h2>
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- info row -->
-            <div class="row invoice-info">
-                <div class="col-md-4">
-                    Pelanggan
-                    <div>
-                       
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
+    <?php
 
-            <!-- Table row -->
-            <div class="row">
-                <div class="col-12 table-responsive">
-                    
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Jenis Katalog</th>
-                                <th>Ukuran</th>
-                                <th>Jenis Kertas</th>
-                                <th>Cover</th>
-                                <th>Finishing</th>
-                                <th>Cetakan</th>
-                                <th>Dok. File</th>
-                                <th>Harga</th>
-                                <th>QTY</th>
-                                <th>Date Order</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                           
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
+    use App\Models\KelasModel;
 
-            <div class="row">
-                <div class="col-6">
-                    <p class="lead">Total Pemesanan</p>
-
-                    <div class="table-responsive">
-                        <table class="table">
-                           
-                            <tr>
-                                <th colspan="3" style="text-align: right">Total:</th>
-
-                               
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-        </section>
-        <!-- /.content -->
+    $kelas = new KelasModel();
+    $k = $kelas->asObject()->where('id', auth()->id_kelas)->first(); ?>
+    <div class="row justify-content-center" style="font-size: 12px;">
+        <div class="col-md-4">
+            <img src="http://localhost/project_ujian_sekolah/public/assets/img/logo/logo.png" class="rounded-circle" style="width: 50px;">
+        </div>
+        <div class="col-md-4 text-center">
+            <h4>HASIL UJIAN TENGAH SEMESTER</h4>
+            <H6>KELAS <?= $k->kelas; ?> | <?= $k->jurusan; ?></H6>
+        </div>
+        <div class="col-md-4 text-right" style="font-size: 8px;">
+            <p>No. Ujian : <?= auth()->nus; ?></p>
+        </div>
     </div>
-    <!-- ./wrapper -->
+    <div class="position-relative" style="margin-top: -5rem;">
+        <hr>
+    </div>
+    <div class="row text-right mt-5" style="margin-left: 25rem;">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title"><?= auth()->name; ?></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><?= $k->jurusan; ?></h6>
+                <p class="card-text">Dari hasil yang diperoleh dari ujian yang dikerjakan maka dengan ini siswa/siswi tersebut dinyatakan.</p>
+                <h5 class="text-success">LULUS</h5>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-12" style="border-bottom: 1px;">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Ujian</th>
+                        <th scope="col" class="text-success">Benar</th>
+                        <th scope="col" class="text-danger">Salah</th>
+                        <th scope="col">Skor Akhir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">UTS Sistem Operasi</th>
+                        <td>5 Soal</td>
+                        <td>5 Soal</td>
+                        <td>
+                            <h6 class="font-weight-bold">55</h6>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row text-right" style="margin-left: 20rem;">
+        <div class="card" style="width: 16rem;">
+            <div class="card-body">
+
+                <p class="card-text">Biak, <?php
+                                            function tgl_indo($tanggal)
+                                            {
+                                                $bulan = array(
+                                                    1 =>   'Januari',
+                                                    'Februari',
+                                                    'Maret',
+                                                    'April',
+                                                    'Mei',
+                                                    'Juni',
+                                                    'Juli',
+                                                    'Agustus',
+                                                    'September',
+                                                    'Oktober',
+                                                    'November',
+                                                    'Desember'
+                                                );
+                                                $pecahkan = explode('-', $tanggal);
+
+                                                // variabel pecahkan 0 = tanggal
+                                                // variabel pecahkan 1 = bulan
+                                                // variabel pecahkan 2 = tahun
+
+                                                return $pecahkan[2] . ' ' . $bulan[(int)$pecahkan[1]] . ' ' . $pecahkan[0];
+                                            }
+                                            echo tgl_indo(date('Y-m-d')); ?></p>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row text-center">
+        <div style="float: left;width: 33.33%;padding: 15px;">
+            <p style="padding-top: 7.3rem;font-weight: bold;">
+                <?= auth()->name; ?>
+            </p>
+        </div>
+        <div style="float: left;width: 20%;padding: 15px;"></div>
+        <div style="float: left;width: 33.33%;padding: 15px;">
+            <p>
+                Pengampu
+            </p>
+            <p style="padding-top: 5rem;font-weight: bold;">
+                Bayu Wardana S.Kom
+            </p>
+        </div>
+    </div>
+
+    <footer style="position: fixed; 
+                bottom: 0cm; 
+                left: 0cm; 
+                right: 0cm;
+                height: 2cm;">
+        <div class="card">
+            <div class="card-body">
+
+                <i>Catatan: Lembar hasil ujian ini harus di tanda tangani oleh siswa/siswi maupun guru pengampu mata pelajaran. Print 2 lembar 1 untuk siswa/siswi dan yang satunya untuk guru pengampu sebagai arsip</i>
+            </div>
+        </div>
+    </footer>
+
+
+
 </body>
 
 </html>

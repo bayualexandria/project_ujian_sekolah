@@ -8,13 +8,14 @@
     <title><?= $title ?? ''; ?></title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="<?= base_url('/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css'); ?>">
+    <!-- <link rel="stylesheet" href="<?= base_url('/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css'); ?>"> -->
     <link rel="stylesheet" href="<?= base_url('/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css'); ?>">
     <!-- inject:css -->
     <link rel="stylesheet" href="<?= base_url('/assets/css/shared/style.css'); ?>">
     <?= $this->renderSection('styles') ?? ''; ?>
     <!-- endinject -->
     <link rel="shortcut icon" href="<?= base_url('/assets/img/logo/logo.png'); ?>" />
+    <script src="<?= base_url('/assets/js/jquery-3.4.1.min.js'); ?>"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
     </div>
 
     <!-- J-Query -->
-    <script src="<?= base_url('/assets/js/jquery-3.4.1.min.js'); ?>"></script>
+
     <?= $this->renderSection('scripts'); ?>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
@@ -95,7 +96,7 @@
                 });
             });
 
-            
+
 
             $("#logoutsidebar").on("click", function(e) {
                 e.preventDefault();

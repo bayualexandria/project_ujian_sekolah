@@ -21,6 +21,13 @@
                 </div>
                 <div class="col-md-12">
                     <div class="card">
+                        <?php if (session()->get('id_akses') == 3) : ?>
+                            <div class="card-header border-bottom-0">
+                                <a href="<?= base_url('jadwal'); ?>" class="btn btn-success btn-fw">
+                                    <span class="mdi mdi-arrow-left"> Kembali</span>
+                                </a>
+                            </div>
+                        <?php endif; ?>
                         <div class="card-body">
                             <div class="row justify-content-center">
                                 <div class="col-md-6 m-auto text-center">
