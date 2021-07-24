@@ -18,7 +18,7 @@
         margin: 0;
         display: flex;
         align-items: center;justify-content:space-between;">
-                <img src="https://scontent.fupg1-1.fna.fbcdn.net/v/t1.6435-9/118275420_2748858878690837_5548843902803421130_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=174925&_nc_eui2=AeGvMB6Lc9tBtcNWH9wzFE6znCeho58ruJScJ6Gjnyu4lOIC2xoUAboLFLajH3O1Q0Qn1yu47l9dSIEVKTNyhzFl&_nc_ohc=MnO52JtySx0AX_b1gHn&_nc_ht=scontent.fupg1-1.fna&oh=8cc13f8c7b5b75b99422dcda8c61caf1&oe=60CE449B" alt="" style="width: 50px;
+                <img src="https://static.thenounproject.com/png/503257-200.png" alt="" style="width: 50px;
         border-radius: 48%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         height: 50px;
@@ -29,14 +29,14 @@
                 </div>
             </div>
             <div style="background-color:white;padding: 5px;">
-                <p style="font-size: 24px;"></p>
+                <p style="font-size: 24px;"><?= $title?></p>
                 <p style="text-align: justify; padding:0 25px;">
                    
-                        Hai, . Selamat kamu telah terdaftar pada akun kami, selamat bergabung di situs kami. Untuk mengaktifkan akun ini perlu verifikasi akun anda untuk keamanan data pribadi kamu. Klik tombol aktivasi dibawah ini.
+                        Hai, <?= $name;?>. Selamat kamu telah terdaftar pada akun kami, selamat bergabung di situs kami. Untuk mengaktifkan akun ini perlu verifikasi akun anda untuk keamanan data pribadi kamu. Klik tombol aktivasi dibawah ini.
                     
                 </p>
                 <p style="margin-top: 50px;margin-bottom:50px;">
-                    <a href="" style="width: auto;
+                    <a href="<?= base_url($url);?>" style="width: auto;
         height: auto;
         padding: 5px 20px;
         border: 1.5px solid rgba(0, 0, 0, 0.2);
@@ -47,7 +47,7 @@
         background-color: #2E65EF;
         border-radius: 4px;
         font-size: 24px;">
-                       jk
+                       Konfirmasi Email
                     </a>
                 </p>
             </div>
@@ -66,9 +66,9 @@
                 </p>
                 <div style="display:inline">
                     <i class="fa fa-facebook"></i>
-                    <i><img src="<?= base_url('assets/img/logo/twitter.png'); ?>" alt="" style="width: 50px;height: 50px;border-radius: 40%;"></i>
-                    <i><img src="<?= base_url('assets/img/logo/instagram.png'); ?>" alt="" style="width: 50px;height: 50px;border-radius: 40%;"></i>
-                    <i><img src="<?= base_url('assets/img/logo/github.png'); ?>" alt="" style="width: 50px;height: 50px;border-radius: 40%;"></i>
+                    <i><img src="https://i.pinimg.com/474x/04/c6/32/04c6329b172debd397e990fe8bcc779a.jpg" alt="" style="width: 50px;height: 50px;border-radius: 40%;"></i>
+                    <i><img src="https://png.pngtree.com/element_our/png_detail/20181011/facebook-social-media-icon-design-template-vector-png_127003.jpg" alt="" style="width: 50px;height: 50px;border-radius: 40%;"></i>
+                    <i><img src="https://w7.pngwing.com/pngs/914/758/png-transparent-github-social-media-computer-icons-logo-android-github-logo-computer-wallpaper-banner.png" alt="" style="width: 50px;height: 50px;border-radius: 40%;"></i>
                 </div>
                 <p>
                     Script Code, Jl. Samuel No.50, Dolog. Kelurahan Mandala. Biak-Papua
